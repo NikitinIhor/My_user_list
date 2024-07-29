@@ -1,0 +1,17 @@
+.add {
+  position: absolute;
+  top: 7%;
+  left: 40%;
+  background-color: green;
+  height: 60px;
+  width: 180px;
+  color: white;
+  font-size: 22px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  box-shadow: 5px 5px 8px black;
+}
+.add:hover {
+  transform: scale(0.95);
+  box-shadow: none;
+}
