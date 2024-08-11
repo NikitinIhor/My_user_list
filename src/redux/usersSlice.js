@@ -6,6 +6,7 @@ export const usersSlice = createSlice({
     name: "users",
     initialState: {
         usersArr: [],
+        editedUsers: [],
         loading: false,
         error: false,
     },
@@ -19,9 +20,9 @@ export const usersSlice = createSlice({
                 state.loading = false
                 state.usersArr = action.payload
             })
-            .addCase(fetchUsers.rejected, (state) => {
+            .addCase(fetchUsers.rejected, (state, action) => {
                 state.loading = false,
-                    state.error = true
+                    state.error = action.payload
             })
             .addCase(deleteUser.pending, (state) => {
                 state.loading = true
@@ -55,19 +56,19 @@ export const usersSlice = createSlice({
                 state.loading = false
                 const index = state.usersArr.findIndex(user => user.id === action.payload.id)
                 state.usersArr[index] = action.payload
+                state.editedUsers = [...state.editedUsers, action.payload.id]
             })
-            .addCase(updateUser.rejected, (state) => {
+            .addCase(updateUser.rejected, (state, action) => {
                 state.loading = false
-                state.error = true
+                state.error = action.payload
             })
     }
 })
 
-
-
 export const selectLoading = (state) => state.users.loading
 export const selectError = (state) => state.users.error
 export const selectUsers = (state) => state.users.usersArr
+export const srlectEditedUsers = (state) => state.users.editedUsers
 
 export const selectFiltredUsers = createSelector(
     [selectUsers, selectFilter],

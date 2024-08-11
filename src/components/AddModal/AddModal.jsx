@@ -1,7 +1,12 @@
 import Modal from "react-modal";
 import UserForm from "../UserForm/UserForm";
 
-export default function AddModal({ addModalIsopen, closeAddModal, user }) {
+export default function AddModal({
+  setEdit,
+  addModalIsopen,
+  closeAddModal,
+  user,
+}) {
   const customStyles = {
     content: {
       top: "50%",
@@ -21,7 +26,7 @@ export default function AddModal({ addModalIsopen, closeAddModal, user }) {
 
   return (
     <Modal style={customStyles} isOpen={addModalIsopen}>
-      <UserForm onRequestClose={closeAddModal} user={user} />
+      <UserForm setEdit={setEdit} onRequestClose={closeAddModal} user={user} />
     </Modal>
   );
 }

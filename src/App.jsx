@@ -5,7 +5,6 @@ import UsersList from "./components/UsersList/UsersList";
 export default function App() {
   return (
     <>
-      {" "}
       <ButtonAddUser />
       <Search />
       <UsersList />

@@ -32,7 +32,7 @@ const FeedbackSchema = Yup.object().shape({
   }),
 });
 
-export default function UserForm({ onRequestClose, user }) {
+export default function UserForm({ setEdit, onRequestClose, user }) {
   const dispatch = useDispatch();
 
   const id = useId();
@@ -41,9 +41,12 @@ export default function UserForm({ onRequestClose, user }) {
   const newInitialValues = isEdited ? user : initialValues;
 
   const handleSubmit = (values, actions) => {
-    isEdited
-      ? dispatch(updateUser({ ...values, id: user.id }))
-      : dispatch(addUser(values));
+    if (isEdited) {
+      dispatch(updateUser({ ...values, id: user.id }));
+      setEdit(true);
+    } else {
+      dispatch(addUser(values));
+    }
 
     actions.resetForm();
     onRequestClose();
