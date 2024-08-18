@@ -17,23 +17,12 @@
   padding: 5px;
   width: 350px;
   display: flex;
-  gap: 10px;
+  column-gap: 10px;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
   font-size: 16px;
 }
-@media screen and (max-width: 580px) {
-  .container {
-    width: 200px;
-    font-size: 12px;
-  }
-  .btns button {
-  }
-  span {
-    font-size: 14px;
-    font-weight: 500;
-  }
-}
+
 span {
   font-size: 18px;
   margin-left: auto;
@@ -49,4 +38,16 @@ span {
 }
 .edited {
   color: red;
+}
+@media screen and (max-width: 580px) {
+  .container {
+    width: 200px;
+    font-size: 16px;
+    flex-direction: column;
+  }
+
+  span {
+    font-size: 14px;
+    margin-left: none;
+  }
 }
