@@ -1,7 +1,7 @@
 .add {
   position: absolute;
   top: 7%;
-  left: 40%;
+  left: 10px;
   background-color: green;
   height: 60px;
   width: 180px;
@@ -14,4 +14,10 @@
 .add:hover {
   transform: scale(0.95);
   box-shadow: none;
+}
+@media screen and (max-width: 580px) {
+  .add {
+    width: 100px;
+    font-size: 18px;
+  }
 }

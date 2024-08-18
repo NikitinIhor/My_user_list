@@ -18,8 +18,6 @@ export default function AddModal({
       background: "rgb(101, 121, 101)",
       borderRadius: 8,
       color: "white",
-      width: "400px",
-      height: "400px",
       boxShadow: "8px 8px 8px black",
     },
   };

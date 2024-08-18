@@ -4,10 +4,10 @@ import UsersList from "./components/UsersList/UsersList";
 
 export default function App() {
   return (
-    <>
+    <div className="container">
       <ButtonAddUser />
       <Search />
       <UsersList />
-    </>
+    </div>
   );
 }

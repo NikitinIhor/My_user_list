@@ -1,5 +1,5 @@
 .list {
-  margin-top: -56px;
+  margin-top: 20px;
   display: grid;
   gap: 15px;
 }
@@ -11,6 +11,11 @@
   width: 450px;
   box-shadow: 2px 2px 5px black;
   background-color: rgb(250, 250, 153);
+}
+@media screen and (max-width: 580px) {
+  .item {
+    width: 300px;
+  }
 }
 .loading,
 .error,
